@@ -5,7 +5,9 @@ class GatherWood extends Component {
         const wood = 0
         return (
             <p>
-                Gather Wood: {wood} + -
+                Gather Wood: {wood}
+                <button>+</button>
+                <button>-</button>
             </p>
         )
     }
