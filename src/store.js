@@ -2,6 +2,8 @@ import { applyMiddleware, createStore, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { call, put } from 'redux-saga/effects'
 
+import rootReducer from './reducers'
+
 const animationFrame = () => {
     return new Promise(resolve => {
         window.requestAnimationFrame(resolve)
@@ -22,7 +24,7 @@ const sagaMiddleware = createSagaMiddleware()
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(
-    store => store,
+    rootReducer,
     { gold: 5 },
     composeEnhancers(applyMiddleware(sagaMiddleware)),
 )

@@ -8,7 +8,7 @@ class GoldComponent extends Component {
         const { gold } = this.props
         return (
             <p>
-                Gold {gold}
+                Gold {gold.toFixed(0)}
             </p>
         )
     }
